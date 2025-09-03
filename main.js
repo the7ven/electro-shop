@@ -31,3 +31,73 @@
                 this.style.transform = 'scale(1)';
             }, 200);
         });
+
+
+
+
+
+ let currentSlide = 0;
+        const totalSlides = 3;
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
+        const currentCounter = document.getElementById('current');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            
+            currentCounter.textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateSlider();
+        }
+
+        // Navigation par boutons
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Navigation par dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Navigation automatique (optionnel)
+        setInterval(nextSlide, 5000);
+
+        // Navigation par clavier
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Gestion du swipe tactile (mobile)
+        let startX = 0;
+        let endX = 0;
+
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        slider.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) nextSlide();
+            if (endX - startX > 50) prevSlide();
+        });
+      
