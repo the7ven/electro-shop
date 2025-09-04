@@ -605,7 +605,7 @@ body {
 
 
 .partners-carousel{
-
+  padding: 3px;
   overflow: hidden;
   white-space: nowrap;
   position: relative;
