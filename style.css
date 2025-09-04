@@ -532,36 +532,6 @@ body {
 
 @media (max-width: 768px) {
 
-. {
-  position: absolute;
-  top: 0;
-  right: 40%;
-  width: 120px;
-  height: 80px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-}
-
-
-
-.details h4{
-    font-size: .8rem;
-}
-
-.details h5{
-    font-size: .6rem;
-}
-
-.details p{
-    font-size: .6rem;
-}
-
-
-
   .hero {
     padding-top: 120px;
     flex-direction: column;
@@ -580,7 +550,7 @@ body {
   .promo-content {
     position: absolute;
     right: 17%;
-    top: 125%;
+    top: 127%;
     width: 250px;
     height: 100px;
     padding: 10px;
@@ -607,7 +577,7 @@ body {
     width: 90px;
     position: absolute;
     left: 0px;
-    bottom: 43%;
+    bottom: 40%;
   }
 
 
@@ -626,6 +596,7 @@ body {
 
 .text p {
   font-weight: 900;
+  font-size: .6rem;
 }
 
 }
