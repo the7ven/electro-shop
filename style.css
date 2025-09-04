@@ -431,7 +431,7 @@ body {
 }
 
 .product-image img {
-  width: 400px;
+  width: 100%;
   transform: rotate(8deg);
 }
 
@@ -549,8 +549,8 @@ body {
 
   .promo-content {
     position: absolute;
-    right: 17%;
-    top: 130%;
+    right: 14%;
+    top: 129%;
     width: 250px;
     height: 100px;
     padding: 10px;
@@ -605,6 +605,7 @@ body {
 
 
 .partners-carousel{
+  padding-bottom: 80px;
   overflow: hidden;
   white-space: nowrap;
   position: relative;
@@ -748,4 +749,16 @@ body {
 .partners-carousel::after {
   right: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 0.95), transparent);
+}
+
+
+/* trending*/
+
+
+
+
+.trending-title{
+  font-size: 6rem ;
+  font-weight: 600;
+  text-align: center;
 }
