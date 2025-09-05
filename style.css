@@ -389,7 +389,6 @@ body {
   max-width: 500px;
   width: 100%;
   position: relative;
-
   padding: 40px;
 }
 
@@ -406,11 +405,12 @@ body {
 }
 
 .product-card {
-
   min-width: 100%;
-  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
   text-align: center;
-  
   overflow: hidden;
 }
 
@@ -422,7 +422,6 @@ body {
   justify-content: center;
   font-size: 60px;
   color: white;
-
   transition: transform 0.3s ease;
 }
 
@@ -434,8 +433,6 @@ body {
   width: 100%;
   transform: rotate(8deg);
 }
-
-
 
 .navigation {
   display: flex;
@@ -531,7 +528,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   .hero {
     padding-top: 120px;
     flex-direction: column;
@@ -546,7 +542,6 @@ body {
     color: #2c3e50;
   }
 
-
   .promo-content {
     position: absolute;
     right: 17%;
@@ -559,8 +554,6 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.411);
     padding: 10px;
   }
-
-  
 
   .color-blur {
     display: flex;
@@ -580,31 +573,26 @@ body {
     bottom: 40%;
   }
 
-
   .text h3 {
-  color: #bb7693;
-  font-size: .8rem;
+    color: #bb7693;
+    font-size: 0.8rem;
+  }
+
+  .text h4 {
+    color: #34495e;
+  }
+
+  .text h5 {
+    color: #00000049;
+  }
+
+  .text p {
+    font-weight: 900;
+    font-size: 0.6rem;
+  }
 }
 
-.text h4 {
-  color: #34495e;
-}
-
-.text h5 {
-  color: #00000049;
-}
-
-.text p {
-  font-weight: 900;
-  font-size: .6rem;
-}
-
-}
-
-
-
-
-.partners-carousel{
+.partners-carousel {
   padding: 3px;
   overflow: hidden;
   white-space: nowrap;
@@ -708,7 +696,6 @@ body {
     border-radius: 15px;
   }
 
- 
   .partner-logo {
     width: 120px;
     height: 60px;
@@ -727,7 +714,6 @@ body {
     gap: 25px;
   }
 }
-
 
 /* Effet de fondu sur les bords */
 .partners-carousel::before,
@@ -751,14 +737,390 @@ body {
   background: linear-gradient(to left, rgba(255, 255, 255, 0.95), transparent);
 }
 
-
 /* trending*/
 
+.trending {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-
-
-.trending-title{
-  font-size: 6rem ;
+.trending-title {
+  font-size: 6rem;
   font-weight: 600;
   text-align: center;
+}
+
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-rows: repeat(3, 360px);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.bento-item {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bento-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.bento-item.featured {
+  grid-row: span 2;
+  
+}
+
+.bento-item.wide {
+  grid-column: span 2;
+}
+
+.product-image {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.bento-item.featured .product-image {
+  height: 60%;
+}
+
+.bestseller-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4757;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #2ed573;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.product-info {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-item.featured .product-info {
+  height: 30%;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.current-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.old-price {
+  font-size: 1rem;
+  color: #95a5a6;
+  text-decoration: line-through;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.star {
+  color: #f39c12;
+  font-size: 0.9rem;
+}
+
+.rating-count {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  margin-left: 0.5rem;
+}
+
+.quick-view-btn {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.quick-view-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  margin: 2% auto;
+  padding: 0;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90%;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #333;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.image-gallery {
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+  border-color: #3498db;
+  transform: scale(1.05);
+}
+
+.product-details {
+  padding: 1rem 0;
+}
+
+.product-details h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-current-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.modal-old-price {
+  font-size: 1.5rem;
+  color: #95a5a6;
+  text-decoration: line-through;
+}
+
+.savings {
+  background: #2ed573;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.description {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.features {
+  margin-bottom: 2rem;
+}
+
+.features h4 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.features ul {
+  list-style: none;
+}
+
+.features li {
+  padding: 0.5rem 0;
+  color: #7f8c8d;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2ed573;
+  font-weight: bold;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-to-cart,
+.buy-now {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+}
+
+.buy-now {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.add-to-cart:hover,
+.buy-now:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .bento-item.wide {
+    grid-column: span 1;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
 }

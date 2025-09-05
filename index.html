@@ -247,6 +247,157 @@
 
     <div class="trending">
         <h1 class="trending-title"> Best Seller</h1>
+         <div class="trending-container">
+       
+
+        <div class="bento-grid">
+            <!-- Produit Featured -->
+            <div class="bento-item featured" data-product="1">
+                <div class="bestseller-badge">#1 Bestseller</div>
+                <div class="discount-badge">-30%</div>
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=300&fit=crop')"></div>
+                <div class="product-info">
+                    <h3 class="product-title">Nike Air Max Revolution</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-count">(2,847 avis)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">89.99€</span>
+                        <span class="old-price">129.99€</span>
+                    </div>
+                    <button class="quick-view-btn">Voir détails</button>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="bento-item" data-product="2">
+                <div class="bestseller-badge">#2</div>
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=200&fit=crop')"></div>
+                <div class="product-info">
+                    <h3 class="product-title">Montre Élégante Pro</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★☆</span>
+                        <span class="rating-count">(1,523)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">199.99€</span>
+                    </div>
+                    <button class="quick-view-btn">Voir détails</button>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="bento-item" data-product="3">
+                <div class="bestseller-badge">#3</div>
+                <div class="discount-badge">-15%</div>
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&h=200&fit=crop')"></div>
+                <div class="product-info">
+                    <h3 class="product-title">Casque Audio Premium</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-count">(892)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">149.99€</span>
+                        <span class="old-price">179.99€</span>
+                    </div>
+                    <button class="quick-view-btn">Voir détails</button>
+                </div>
+            </div>
+
+            <!-- Produit 4 - Wide -->
+            <div class="bento-item wide" data-product="4">
+                <div class="bestseller-badge">#4</div>
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1560472355-536de3962603?w=600&h=200&fit=crop')"></div>
+                <div class="product-info">
+                    <h3 class="product-title">MacBook Pro M3 - Collection Limitée</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-count">(4,156)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">1,899.99€</span>
+                    </div>
+                    <button class="quick-view-btn">Voir détails</button>
+                </div>
+            </div>
+
+            <!-- Produit 5 -->
+            <div class="bento-item" data-product="5">
+                <div class="bestseller-badge">#5</div>
+                <div class="discount-badge">-25%</div>
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=200&fit=crop')"></div>
+                <div class="product-info">
+                    <h3 class="product-title">Casque VR Immersif</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★☆</span>
+                        <span class="rating-count">(678)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">299.99€</span>
+                        <span class="old-price">399.99€</span>
+                    </div>
+                    <button class="quick-view-btn">Voir détails</button>
+                </div>
+            </div>
+
+            <!-- Produit 6 -->
+            <div class="bento-item" data-product="6">
+                <div class="bestseller-badge">#6</div>
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=200&fit=crop')"></div>
+                <div class="product-info">
+                    <h3 class="product-title">Sac à Dos Design</h3>
+                    <div class="product-rating">
+                        <span class="star">★★★★★</span>
+                        <span class="rating-count">(2,341)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">79.99€</span>
+                    </div>
+                    <button class="quick-view-btn">Voir détails</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="image-gallery">
+                    <div id="mainImage" class="main-image"></div>
+                    <div class="thumbnail-container" id="thumbnailContainer">
+                        <!-- Thumbnails seront générés par JS -->
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h2 id="modalTitle"></h2>
+                    <div class="product-rating">
+                        <span class="star" id="modalRating"></span>
+                        <span class="rating-count" id="modalRatingCount"></span>
+                    </div>
+                    <div class="price-section">
+                        <span class="modal-current-price" id="modalPrice"></span>
+                        <span class="modal-old-price" id="modalOldPrice"></span>
+                        <span class="savings" id="modalSavings"></span>
+                    </div>
+                    <div class="description" id="modalDescription"></div>
+                    <div class="features">
+                        <h4>Caractéristiques principales :</h4>
+                        <ul id="modalFeatures">
+                            <!-- Features seront générées par JS -->
+                        </ul>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="add-to-cart">Ajouter au panier</button>
+                        <button class="buy-now">Acheter maintenant</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
    
